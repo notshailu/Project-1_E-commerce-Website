@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeFinds - Login & Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <!-- Login Form -->
+        <div class="form-box" id="login-box">
+            <h2>Login to LuxeFinds</h2>
+            <form id="loginForm" action="login.php" method="POST" onsubmit="return validateLoginForm()">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <button type="submit">Login</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="showRegistration()">Register Here</a></p>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="form-box" id="register-box" style="display: none;">
+            <h2>Register for LuxeFinds</h2>
+            <form id="registerForm" action="register.php" method="POST" onsubmit="return validateRegisterForm()">
+                <label for="register-name">Full Name:</label>
+                <input type="text" id="register-name" name="name" required>
+
+                <label for="register-email">Email:</label>
+                <input type="email" id="register-email" name="email" required>
+                
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" name="password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" required>
+
+                <button type="submit">Register</button>
+                <p id="register-error" class="error-message"></p>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login Here</a></p>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
+
